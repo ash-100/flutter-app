@@ -55,7 +55,7 @@ class SecondScreen extends StatelessWidget {
   void openWebsite(BuildContext context) async {
     String url = "https://www.google.co.in/";
     if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
+      await launchUrlString(url, mode: LaunchMode.externalApplication);
     } else {
       var snackBar = SnackBar(content: Text('Cannot open website'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
